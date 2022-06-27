@@ -10,7 +10,7 @@ The data (sport and health) is made by a garmin Fenix 6.
 
 
 ########################################
-Version 1.
+Version 0.1.0
 
 Scheduler => crontab
 
@@ -24,6 +24,7 @@ The data is written down locally in a CSV file
 
 
 # TO DO
+=> add github data via the api
 => get the data on a cloud database (GCP or AWS)
 => schedule with Airflow
 => get the health data from garmin
