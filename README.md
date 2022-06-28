@@ -22,9 +22,11 @@ activities_d.py => get the all the activities and aggregate it by day
 The python file read the csv file of activities and aggregate the data by day for the "running", "cycling" and "swimming"
 The data is written down locally in a CSV file
 
+main_page.py => get the contribution data from github API and display data (activities and github's contribution) on a streamlit app.
+https://fniclause-strava-main-page-qdftlf.streamlitapp.com/
 
 # TO DO
-=> add github data via the api
+=> prepare the github data to get streamlit working
 => get the data on a cloud database (GCP or AWS)
 => schedule with Airflow
 => get the health data from garmin
