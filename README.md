@@ -26,7 +26,7 @@ main_page.py => get the contribution data from github API and display data (acti
 https://fniclause-strava-main-page-qdftlf.streamlitapp.com/
 
 # TO DO
-=> prepare the github data to get streamlit working
 => get the data on a cloud database (GCP or AWS)
 => schedule with Airflow
+=> set up the streamlit with the data from GCP and AWS
 => get the health data from garmin
