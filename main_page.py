@@ -1,31 +1,11 @@
-import requests
-import json
 import pandas as pd
-import keys
-
-import requests
-
-url = 'https://api.github.com/graphql'
-json = { 'query' : '{viewer { login contributionsCollection {contributionCalendar {weeks { contributionDays {date weekday contributionCount contributionLevel color}}}}}}' }
-api_token = keys.github_token
-headers = {'Authorization': 'token %s' % api_token}
-
-r = requests.post(url=url, json=json, headers=headers)
-
-data=r.json()['data']['viewer']['contributionsCollection']['contributionCalendar']
-
-df = pd.json_normalize(data, record_path=['weeks','contributionDays'])
-df['date'] = pd.to_datetime(df.date, format='%Y-%m-%d')
-
-df.set_index('date', inplace = True)
 
 import calplot
 
-fig, ax = calplot.calplot(data = df['contributionCount'],how = 'sum', cmap = 'YlGn', figsize = (16, 8), suptitle = "Contributions on Github by Month and Year",colorbar=False,vmin=0,vmax=5)
+import streamlit as st
+
 
 ########################################################################################################################
-
-import streamlit as st
 
 st.markdown("# Florian Niclause")
 st.markdown("## Data Engineer")
@@ -39,9 +19,22 @@ st.markdown("""
 
 st.write("My First Streamlit Web App")
 
+
+########################################################################################################################
+
+#github contribution calplot
+df=pd.read_csv('./data/git_data_contribution.csv')
+
+df['date'] = pd.to_datetime(df.date, format='%Y-%m-%d')
+df.set_index('date', inplace = True)
+
+fig, ax = calplot.calplot(data = df['contributionCount'],how = 'sum', cmap = 'YlGn', figsize = (16, 8), suptitle = "Contributions on Github by Month and Year",colorbar=False,vmin=0,vmax=5)
+
 st.pyplot(fig)
 
 #########################################################################################################################
+
+# training, routine and stretching on one heatmap
 from datetime import date, datetime, time, timedelta
 import seaborn as sns
 import matplotlib.pyplot as plt
