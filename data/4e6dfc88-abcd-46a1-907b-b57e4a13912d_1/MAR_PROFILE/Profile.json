@@ -1,0 +1,18 @@
+{
+  "guid": "14301e3b-7b52-4195-9df4-26136f27bf5e",
+  "displayName": "Default6056256",
+  "id": 6056256,
+  "lastLoginDate": "2021-08-30T04:49:43.585",
+  "roles": [],
+  "userActivities": [],
+  "userVessels": [],
+  "userPrivacySettings": {
+    "id": 6056256,
+    "customerGuid": "00000000-0000-0000-0000-000000000000",
+    "vesselsVisibility": "OnlyMe",
+    "activitiesVisibility": "Everyone",
+    "dateCreated": "2021-08-30T04:49:43.116",
+    "dateLastModified": "2021-08-30T04:49:43.1162038",
+    "lastModifiedBy": "NAVIONICS_MOBILE"
+  }
+}

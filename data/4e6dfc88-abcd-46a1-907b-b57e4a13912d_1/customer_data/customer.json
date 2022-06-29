@@ -1,0 +1,38 @@
+{
+  "id" : null,
+  "firstName" : "Niclause",
+  "middleName" : null,
+  "lastName" : null,
+  "fullName" : "Niclause",
+  "namePrefix" : null,
+  "nameSuffix" : null,
+  "gender" : null,
+  "displayName" : null,
+  "username" : "FLORIANNICLAUSE@GMAIL.COM",
+  "primaryAddress" : null,
+  "primaryEmailAddress" : {
+    "emailAddress" : "florianniclause@gmail.com",
+    "type" : null,
+    "primary" : true,
+    "emailVerified" : true,
+    "emailVerificationTimestamp" : "2021-08-30T04:49:40Z",
+    "emailAddressId" : null
+  },
+  "primaryPhoneNumber" : null,
+  "locale" : "fr_FR",
+  "type" : null,
+  "active" : true,
+  "version" : 236,
+  "lastUpdateDateTime" : "2022-06-16T10:57:49Z",
+  "createdDate" : "2020-07-21T10:16:36Z",
+  "customerLocation" : {
+    "countryCode" : "FR",
+    "verified" : true,
+    "verifiedTimestamp" : "2020-07-21T15:16:36Z"
+  },
+  "addresses" : [ ],
+  "emailAddresses" : [ ],
+  "phoneNumbers" : [ ],
+  "foreignIdentifiers" : [ ],
+  "loginInfo" : null
+}
