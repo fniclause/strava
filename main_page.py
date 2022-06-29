@@ -1,4 +1,6 @@
 import pandas as pd
+import requests
+import json
 
 import calplot
 
@@ -23,7 +25,20 @@ st.write("My First Streamlit Web App")
 ########################################################################################################################
 
 #github contribution calplot
-df=pd.read_csv('./data/git_data_contribution.csv')
+
+#df=pd.read_csv('./data/git_data_contribution.csv')
+
+
+url = 'https://api.github.com/graphql'
+json = { 'query' : '{viewer { login contributionsCollection {contributionCalendar {weeks { contributionDays {date weekday contributionCount contributionLevel color}}}}}}' }
+api_token = st.secrets.github_token
+headers = {'Authorization': 'token %s' % api_token}
+
+r = requests.post(url=url, json=json, headers=headers)
+
+data=r.json()['data']['viewer']['contributionsCollection']['contributionCalendar']
+
+df = pd.json_normalize(data, record_path=['weeks','contributionDays'])
 
 df['date'] = pd.to_datetime(df.date, format='%Y-%m-%d')
 df.set_index('date', inplace = True)
