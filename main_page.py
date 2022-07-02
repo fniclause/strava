@@ -66,8 +66,16 @@ d=pd.to_datetime(d, format='%Y-%m-%d', errors='ignore',utc=True)
 
 df2=df2.loc[df2['start_date_local_'] > d]
 
-pivoted_data = pd.pivot_table(df2[['start_date_local_','moving_time_sum','type_']],
-                              values='moving_time_sum',index=['type_'] , columns=['start_date_local_'])
+df2['year'] = df2.start_date_local_.dt.year
+df2['month'] = df2.start_date_local_.dt.month
+df2['week'] = df2.start_date_local_.dt.isocalendar().week
+
+df2['Weekday_name'] = df2.start_date_local_.dt.day_name()
+
+pivoted_data = pd.pivot_table(df2[['start_date_local_','Weekday_name','moving_time_sum','type_']],
+                              values='moving_time_sum',index=['type_'] , columns=['start_date_local_','Weekday_name'])
+
+pivoted_data.columns = pivoted_data.columns.droplevel()
 
 #pivoted_data[pivoted_data>0]=1
 
