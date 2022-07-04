@@ -27,6 +27,7 @@ https://fniclause-strava-main-page-qdftlf.streamlitapp.com/
 
 # TO DO
 => get the data on a cloud database (GCP or AWS)
+https://towardsdatascience.com/apache-airflow-for-data-science-how-to-upload-files-to-amazon-s3-5bdf6fcb1cea
 => schedule with Airflow
 => set up the streamlit with the data from GCP and AWS
 => get the health data from garmin
